@@ -10,7 +10,7 @@ Y = data.Income
 # 定义一个顺序模型Sequential
 model = tf.keras.Sequential()
 
-# 给模型里面添加方法
+# 给模型里面添加层
 model.add(tf.keras.layers.Dense(1, input_shape=(1,)))
 
 # 查看模型的整体情况
