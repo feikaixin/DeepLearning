@@ -1,5 +1,5 @@
 """
-数据normalization
+数据normalization, preprocessing模块
 """
 
 from sklearn import preprocessing

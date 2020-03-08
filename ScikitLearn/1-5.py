@@ -1,5 +1,5 @@
 """
-交叉验证
+交叉验证  cross_val_score 
 """
 
 from sklearn.datasets import load_iris
