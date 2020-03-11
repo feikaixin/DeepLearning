@@ -30,4 +30,5 @@ train_X, test_X, train_Y, test_Y = train_test_split(X, Y, test_size=0.3)
 clf = SVC()
 clf.fit(train_X, train_Y)
 
+# 这里的score返回的是R^2指标
 print(clf.score(test_X, test_Y))
