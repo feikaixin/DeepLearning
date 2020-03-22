@@ -21,7 +21,7 @@ model.add(tf.keras.layers.Dense(128, activation="relu"))
 model.add(tf.keras.layers.Dense(10, activation="softmax"))
 
 
-# sparse_categorical_crossentropy一般用在数字上
+# sparse_categorical_crossentropy一般用在连续的数字上
 model.compile(
   optimizer="adam",
   loss="sparse_categorical_crossentropy",
@@ -42,6 +42,7 @@ model.evaluate(test_image, test_label)
 当label为顺序数字的时候用sparse_categorical_crossentropy
 当label为独热编码时使用categorical_crossentropy
 """
+# 将数据转换为onehot编码
 train_label_onehot = tf.keras.utils.to_categorical(train_label)
 
 

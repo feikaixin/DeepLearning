@@ -1,5 +1,5 @@
 
-
+from datetime import datetime
 class Student(object):
 
   def __init__(self):
@@ -21,3 +21,29 @@ class Student(object):
 s = Student()
 s._score = 60
 print(s._score)
+
+# 不带参数的装饰器
+def log(func):
+  def wrapper(*awg, **kw):
+    if not callable(func):
+      raise ValueError('function')
+    print(func.__name__)
+    return func()
+  return wrapper
+
+# 带参数的装饰器
+def log(level):
+  def wrapper(func):
+    def inner_wrapper(*awg, **kw):
+      if not callable(func):
+        raise ValueError('function')
+      print(func.__name__)
+      print(level)
+      return func()
+    return inner_wrapper
+  return wrapper
+@log(level=1)
+def now():
+  print(datetime.now())
+
+now()
